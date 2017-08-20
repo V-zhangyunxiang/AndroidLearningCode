@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yellow"
+        android:textSize="20sp"
+        android:text="@string/hello_world"
+        android:background="@color/red"
+         />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:text="@string/hello_world" />
+
+<!-- 当某个属性有差异时,重新定义可以覆盖style的设置 -->
+    <TextView
+        android:id="@+id/textView3"
+        android:textColor="#0000ff"
+        android:text="@string/hello_world" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/layer" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:src="@drawable/shape_drawble" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/clip_drawble" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button" />
+
+</LinearLayout>

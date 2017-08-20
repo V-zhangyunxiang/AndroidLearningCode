@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="name">
+    <item >aa</item>
+     <item >ab</item>
+      <item >ac</item>
+       <item >aa</item>
+        <item >aa</item>
+         <item >aa</item>
+         </array>
+    
+</resources>

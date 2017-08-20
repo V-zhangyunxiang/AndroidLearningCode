@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 背景图 白-->
+    <!-- <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/player_volume_seekbar_bg">
+        
+    </item> -->
+    
+     <!-- 背景图 蓝-->
+     <item android:id="@android:id/background">
+         <shape>
+            <solid android:color="#c6c6c6" />
+        </shape>
+    	 </item>
+    
+    <!-- 第一进度条 -->
+    <item android:id="@android:id/progress">
+        <!-- <clip android:drawable="@drawable/player_volume_seekbar_progress"
+            	  android:clipOrientation="horizontal"
+             /> -->
+        <!-- 截取图片 范围（0~1000） -->
+         <clip>
+            <shape>
+                <solid android:color="#06a7fa" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>  

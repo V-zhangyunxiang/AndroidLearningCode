@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/img_background_imageview_userinfo_cover" />
+    </item>
+    <item
+        android:left="10dp"
+        android:top="10dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/shoucang" />
+    </item>
+    <item
+        android:left="20dp"
+        android:top="20dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_launcher" />
+    </item>
+
+</layer-list>

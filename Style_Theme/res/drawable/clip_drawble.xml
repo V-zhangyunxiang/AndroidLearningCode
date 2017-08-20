@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipOrientation="horizontal"
+    android:drawable="@drawable/img_background_imageview_userinfo_cover"
+    android:gravity="center_horizontal" >
+
+</clip>

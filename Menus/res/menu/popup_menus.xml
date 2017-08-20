@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/big"
+        android:orderInCategory="100"
+        android:title="大"/>
+    <item
+        android:id="@+id/middle"
+        android:orderInCategory="200"
+        android:title="中"/>
+    <item
+        android:id="@+id/small"
+        android:orderInCategory="300"
+        android:title="小"/>
+<!-- 可以嵌套子菜单,但最多不要超过2级 -->
+</menu>

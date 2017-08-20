@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="声音设置"
+        >
+        <CheckBoxPreference
+            android:key="check_pre"
+            android:summary="打开后效果更好"
+            android:title="打开声音"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="城市"
+       >
+        <EditTextPreference
+            android:key="edit_pre"
+            android:summary="指用户姓名"
+            android:title="昵称"
+            android:defaultValue="false"
+            android:dialogTitle="昵称"
+            />
+        <ListPreference
+            android:key="pref_syncConnectionType"
+            android:title="城市名称"
+            android:dialogTitle="请选择城市名称"
+            android:entries="@array/city"
+            android:entryValues="@array/city"
+            android:defaultValue="@string/app_name" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

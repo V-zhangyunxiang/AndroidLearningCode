@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="city">
+        <item name="北京"/>
+        <item name="上海"/>
+        <item name="天津"/>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- size(大小),solid(全景色),gradient(渐变色),corners(圆角),stroke(边框),angle(角度)-->
+    <size android:width="100dp" android:height="50dp"/>
+    <solid  android:color="#f00"/>
+    <gradient android:startColor="#f00" android:endColor="#00f" android:angle="90"/>
+    <corners  android:radius="30dp"/>
+    <stroke android:width="2dp" android:color="#f00"/>
+    
+</shape>
