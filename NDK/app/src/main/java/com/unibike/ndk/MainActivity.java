@@ -21,7 +21,7 @@ import android.widget.TextView;
     配置：Android Studio中:local.properties文件中添加ndk路径
  *       build gradle中添加 ndk{
                               moduleName "module名称（如hello）"  
-                              abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a','arm64-     	                      v8a'
+                              abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a','arm64-v8a'
                               }
  *  7.测试   native 所在类中加载动态连接库
             static{
