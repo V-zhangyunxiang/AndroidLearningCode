@@ -32,7 +32,7 @@ public class WebViewActivity extends Activity{
 		webSettings.setJavaScriptEnabled(true);//开启JavaScript支持
 		webSettings.setAppCacheEnabled(true);  //开启缓存
 
-                /设置自适应屏幕，两者合用
+                //设置自适应屏幕，两者合用
                 webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小 
                 webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
                 //支持插件

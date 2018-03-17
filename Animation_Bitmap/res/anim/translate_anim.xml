@@ -15,8 +15,7 @@
         
         fromYDelta 属性为动画起始时 Y坐标上的位置
         toYDelta   属性为动画结束时 Y坐标上的位置
-        注意:
-                     没有指定fromXType toXType fromYType toYType 时候,默认是以自己为相对参照物 
+        注意: 没有指定fromXType toXType fromYType toYType 时候,默认是以自己为相对参照物 
 -->
 
 </set>
