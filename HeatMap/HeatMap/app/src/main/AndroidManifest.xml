@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sensorsdata.heatmap">
+
+    <!-- 同步数据需要网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 获取运营商信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:name=".HeatMapApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:host="heatmap" android:scheme="sa6eefec89"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".WebViewActivity" android:launchMode="singleInstance"/>
+
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.EnableLogging"
+            android:value="true"/>
+        <meta-data
+            android:name="com.sensorsdata.analytics.android.ButterknifeOnClick"
+            android:value="true"/>
+
+    </application>
+
+</manifest>
