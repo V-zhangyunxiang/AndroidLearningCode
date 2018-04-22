@@ -26,8 +26,7 @@ public class MyView extends View{
 		textColor= array.getColor(R.styleable.MyView_textColor, 0xFFFFFF);
 		textSize=array.getDimension(R.styleable.MyView_textSize, 25);
 		text=array.getString(R.styleable.MyView_text);
-	  //array.getDrawable(R.drawable.ic_launcher);//图片的获取方式
-	   
+	    //array.getDrawable(R.drawable.ic_launcher);//图片的获取方式
 	    array.recycle();//关闭资源
 	}
 	//视图的绘制 Canvas:画布  Paint:画笔

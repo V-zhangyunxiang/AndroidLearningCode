@@ -39,8 +39,6 @@ public class MainActivity extends Activity {
 //		 Animation translate=AnimationUtils.loadAnimation(this, R.anim.translate_anim);
 //		 Animation rotate=AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
 //		 iv.startAnimation(rotate);//绑定到组件上
-//       //页面退出，及时清理动画资源
-//        iv.clearAnimation()
 //       -------------------------------------------------------------------------
 		//帧动画
 //      ImageView一般用background引用帧动画资源文件,src引用会自动播放帧动画

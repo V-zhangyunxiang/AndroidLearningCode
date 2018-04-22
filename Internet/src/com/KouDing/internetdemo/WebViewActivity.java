@@ -26,13 +26,18 @@ public class WebViewActivity extends Activity{
 		//在当前浏览器打开
 		webView.setWebViewClient(new WebViewClient());
 		handler=new Handler();
-		WebSettings settings=webView.getSettings();
-		settings.setJavaScriptEnabled(true);//开启JavaScript支持
-		settings.setAppCacheEnabled(true);  //开启缓存
-		settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);//缓存应用模式
-		webView.requestFocus();//不设置,会出现软键盘不能弹出的问题
+                webView.requestFocus();//不设置,会出现软键盘不能弹出的问题
 		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);//滚动条在内部显示
-	
+		WebSettings webSettings=webView.getSettings();
+		webSettings.setJavaScriptEnabled(true);//开启JavaScript支持
+		webSettings.setAppCacheEnabled(true);  //开启缓存
+
+                //设置自适应屏幕，两者合用
+                webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小 
+                webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
+                //支持插件
+                webSettings.setPluginsEnabled(true);
+		webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);//缓存应用模式
 		//WebView与JavaScript的交互
 		webView.addJavascriptInterface(new Object(){
 			@JavascriptInterface //这个注解不能少
@@ -40,7 +45,7 @@ public class WebViewActivity extends Activity{
 				handler.post(new Runnable() {
 					@Override
 					public void run() {
-						webView.loadUrl("javascript:myfun()");
+					webView.loadUrl("javascript:myfun()");
 					}
 				});
 			}
@@ -81,3 +86,4 @@ public class WebViewActivity extends Activity{
 	}
 
 }
+

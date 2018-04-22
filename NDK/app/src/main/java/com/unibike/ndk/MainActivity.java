@@ -14,19 +14,19 @@ import android.widget.TextView;
  * JNI程序实现步骤:
  *  1.编写带有Native声明的方法的Java类
  *  2.使用Javac编译所写的Java类    --开发工具自动完成
- *  3.生成扩展名为.h的头文件(把native方法生成为.h文件)
- *
- *    用cmd切换到native方法所在类的Java包路径，调用javah -jni 包名路径+类名 生成.h文件
- *
- *  4 使用C/C++实现本地方法(Android.mk)   .mk文件里面的 :与=之间不能有空格
- *
- *  5.使用C/C++编写的文件生成动态连接库(jni目录下 ndk-build)
- *
- *   Android Studio中:local.properties文件中添加ndk路径
- *                   build gradle中添加 ndk{moduleName "module名称"}
- *
- *
- *  6.测试
+ *  3.使用 javah -jni 包名路径+类名(native 所在的类) 生成.h头文件 （需要 cmd 切换到该类目录）
+ *  4 使用C/C++实现本地方法  在 jni 目录下编写.c/.c++文件，并把.h 文件放到该目录下
+ *  5.使用C/C++编写的文件生成动态连接库(.mk文件里面的 : 与 = 之间不能有空格)
+ *  6.jni目录下执行 ndk-build 生成 so 文件
+    配置：Android Studio中:local.properties文件中添加ndk路径
+ *       build gradle中添加 ndk{
+                              moduleName "module名称（如hello）"  
+                              abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a','arm64-v8a'
+                              }
+ *  7.测试   native 所在类中加载动态连接库
+            static{
+                  System.loadLibrary("hello");
+	          }
  *  **/
 public class MainActivity extends AppCompatActivity {
     private EditText ed1,ed2;
