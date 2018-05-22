@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="button4"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!-- android:layout_marginRight="10dp"
+         配合 app:layout_goneMarginRight="110dp"一起使用
+         (button4 和 button5 的 margin 都要计算)
+         在约束的布局 gone 时，起用 goneMargin，但是一定要预先设置对应方向上的margin
+    -->
+
+    <!--
+    //设置最小尺寸
+    layout_constraintWidth_min or layout_constraintHeight_min
+    //设置最大尺寸
+    layout_constraintWidth_max or layout_constraintHeight_max
+    //设置相对于父类的百分比 0.0~1.0
+    layout_constraintWidth_percent or layout_constraintHeight_percent
+      -->
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="button5"
+        app:layout_constraintRight_toLeftOf="@id/button4"
+        app:layout_goneMarginRight="110dp"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
