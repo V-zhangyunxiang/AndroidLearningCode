@@ -18,22 +18,22 @@ public class WebViewActivity extends Activity{
 	private Handler handler;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.web_view);
-		webView=(WebView) findViewById(R.id.webView);
+	webView=(WebView) findViewById(R.id.webView);
 		progressBar=(ProgressBar) findViewById(R.id.progressbar);
 		//在当前浏览器打开
 		webView.setWebViewClient(new WebViewClient());
 		handler=new Handler();
-                webView.requestFocus();//不设置,会出现软键盘不能弹出的问题
+        webView.requestFocus();//不设置,会出现软键盘不能弹出的问题
 		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);//滚动条在内部显示
 		WebSettings webSettings=webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);//开启JavaScript支持
 		webSettings.setAppCacheEnabled(true);  //开启缓存
 
                 //设置自适应屏幕，两者合用
-                webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小 
+                webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
                 webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
                 //支持插件
                 webSettings.setPluginsEnabled(true);
@@ -68,7 +68,7 @@ public class WebViewActivity extends Activity{
 			public void onReceivedTitle(WebView view, String title) {
 				super.onReceivedTitle(view, title);
 			}
-			
+
 		});
 	}
 	//监听键盘返回键
@@ -84,6 +84,5 @@ public class WebViewActivity extends Activity{
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-
 }
 

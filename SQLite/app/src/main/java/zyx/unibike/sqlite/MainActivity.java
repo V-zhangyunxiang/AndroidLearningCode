@@ -12,5 +12,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         dataBaseAdapter=new DataBaseAdapter(this);
     }
-    //之后通过dataBaseAdapter对象调用增删改查语句
+    //之后通过 dataBaseAdapter 对象调用增删改查语句
 }

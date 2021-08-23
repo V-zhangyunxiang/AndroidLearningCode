@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	TextView tv;
+	MyTestHandler h;
 
 	/**
 	 * Handler实现机制:1.每一个应用程序都会创建一个MessageQueue
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		tv = (TextView) findViewById(R.id.tv);
+		 h = new MyTestHandler();
 	}
     //该写法为标准的handler写法,避免了内存泄漏问题
 	private MyHandler handler=new MyHandler(this);//传递外部类对象
@@ -54,7 +56,7 @@ public class MainActivity extends Activity {
 
 				default:
 					break;
-				}
+				}	
 			}
 			super.handleMessage(msg);
 		}

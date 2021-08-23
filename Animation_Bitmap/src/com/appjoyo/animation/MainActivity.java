@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 		iv2=(ImageView)findViewById(R.id.imageView2);
 	}
 
-	public void anim_alpha(View v){
+	public void anim_alpha(View v) {
 		 //加载动画资源文件,补间动画
 //		 Animation alpha=AnimationUtils.loadAnimation(this, R.anim.alpha_anim);
 //		 Animation scale=AnimationUtils.loadAnimation(this, R.anim.scale_anim);
@@ -51,10 +51,22 @@ public class MainActivity extends Activity {
 //   ObjectAnimator.ofFloat(iv2, "rotationX", 0f,360f).setDuration(300).start();
     //组合多个动画在一起,这种组合方式会同时执行所有动画
 //	PropertyValuesHolder pvha=PropertyValuesHolder.ofFloat("alpha", 1f,0f,1f);
-//	PropertyValuesHolder pvhb=PropertyValuesHolder.ofFloat("scaleX", 1f,0f,1f);	
-//	PropertyValuesHolder pvhc=PropertyValuesHolder.ofFloat("scaleY", 1f,0f,1f);	
+//	PropertyValuesHolder pvhb=PropertyValuesHolder.ofFloat("scaleX", 1f,0f,1f);
+//	PropertyValuesHolder pvhc=PropertyValuesHolder.ofFloat("scaleY", 1f,0f,1f);
 //	ObjectAnimator.ofPropertyValuesHolder(iv2,pvha,pvhb,pvhc).setDuration(500).start();
-//  -----------------------------------------------------------------------------------	    
+	PropertyValuesHolders.ofKeyframe() 把同一个属性拆分
+	// 在 0% 处开始
+    Keyframe keyframe1 = Keyframe.ofFloat(0, 0);  
+// 时间经过 50% 的时候，动画完成度 100%
+   Keyframe keyframe2 = Keyframe.ofFloat(0.5f, 100);  
+// 时间见过 100% 的时候，动画完成度倒退到 80%，即反弹 20%
+   Keyframe keyframe3 = Keyframe.ofFloat(1, 80);  
+   PropertyValuesHolder holder = PropertyValuesHolder.ofKeyframe("progress", keyframe1, keyframe2, keyframe3);
+
+  ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, holder);  
+  animator.start();  
+
+//  -----------------------------------------------------------------------------------
 		//自由落体运动
 //		final View v=view;
 //		DisplayMetrics dm=new DisplayMetrics();
@@ -65,7 +77,7 @@ public class MainActivity extends Activity {
 //			@Override
 //			public void onAnimationUpdate(ValueAnimator animation) {
 //				//设置具体怎么动,并加载到组件上
-//				v.setTranslationY((Float) animation.getAnimatedValue());
+//				String var = null;.setTranslationY((Float) animation.getAnimatedValue());
 //			}
 //		});
 //		va.start();
@@ -96,11 +108,14 @@ public class MainActivity extends Activity {
 //		oa.addListener(new AnimatorListenerAdapter() {
 //			@Override
 //			public void onAnimationEnd(Animator animation) {
-//				
+//
 //				super.onAnimationEnd(animation);
 //			}
 //		});
 //		oa.start();
+//      removeListener 移除监听器
+//      removeAllListeners 移除 animation 的所有监听器
+//		cancel 取消动画
 //------------------------------------------
 //  AnimatorSet的使用
 	ObjectAnimator oa1=ObjectAnimator.ofFloat(view,"rotationX", 0f,360f);

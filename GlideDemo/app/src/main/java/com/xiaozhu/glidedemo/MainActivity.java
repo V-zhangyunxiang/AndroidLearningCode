@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                         })
                         .into(imageView);
                 imageView.setVisibility(View.VISIBLE);
-
                 //downloadImage();
             }
         });

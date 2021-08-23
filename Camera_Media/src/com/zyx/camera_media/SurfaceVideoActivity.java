@@ -34,12 +34,10 @@ public class SurfaceVideoActivity extends Activity implements SurfaceHolder.Call
 
 	public void playClick(View view) {
 		mp.start();
-
 	}
 
 	public void pauseClick(View view) {
 		mp.pause();
-
 	}
 
 	public void stopClick(View view) {

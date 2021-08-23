@@ -74,7 +74,6 @@ public class MyAdapter extends RecyclerView.Adapter {
         } else {
             view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
             viewHolder = new MyViewHolder(view);
-
         }
 
         return viewHolder;
@@ -125,7 +124,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public int getItemViewType(int position) {
+public int getItemViewType(int position) {
         if (list.size() == 0) {
             return ITEM_TYPE_EMPTY;
         }

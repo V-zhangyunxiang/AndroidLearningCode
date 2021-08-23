@@ -16,9 +16,9 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	
-   
-	private boolean mBound=false;//是否绑定 
+
+
+	private boolean mBound=false;//是否绑定
 	private ICat icat;
 
 	@Override
@@ -39,13 +39,13 @@ public class MainActivity extends Activity {
 	public void startIntentServiceClick(View v) {
 		Intent intent = new Intent(this, MyIntentService.class);
 	    startService(intent);
-	   
+
 	}
 	public void bindService(View v){
 		Intent intent = new Intent(this, MyBindService.class);
 		//异步绑定,绑定成功后会回调onServiceConnected方法
 	    bindService(intent, conn, Context.BIND_AUTO_CREATE);
-	   
+
 	}
 	public void unBindService(View v){
 		if(mBound){
@@ -53,17 +53,17 @@ public class MainActivity extends Activity {
 		mBound=false;
 		}
 		Toast.makeText(MainActivity.this, "解绑成功", 0).show();
-	   
+
 	}
 	//绑定服务的连接回调接口
 	private ServiceConnection conn=new ServiceConnection() {
-		
+
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
 			//服务异常时调用
 			mBound=false;
 		}
-		
+
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			//绑定成功后回调的方法
@@ -84,17 +84,17 @@ public class MainActivity extends Activity {
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	//------------线程安全的，不支持并发处理
 	private ServiceConnection conn2=new ServiceConnection() {
-		
+
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
 			flag=false;
-		} 
-		
+		}
+
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			messenger=new Messenger(service);
@@ -103,11 +103,13 @@ public class MainActivity extends Activity {
 			Toast.makeText(MainActivity.this, "绑定成功Mess", 0).show();
 		}
 	};
+
 	protected void onStart() {
 		Intent intent=new Intent(this,MessengerService.class);
 		bindService(intent,conn2,Context.BIND_AUTO_CREATE);
 		super.onStart();
 	};
+
 	protected void onStop() {
 		if(flag){
 			unbindService(conn2);
@@ -116,6 +118,7 @@ public class MainActivity extends Activity {
 		}
 		super.onStop();
 	};
+
 	Messenger messenger;
 	boolean flag=false;
 	//使用Messenger来进行IPC
@@ -132,5 +135,5 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
+
 	}

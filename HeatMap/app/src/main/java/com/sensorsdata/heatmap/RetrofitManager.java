@@ -85,7 +85,7 @@ public class RetrofitManager {
 
         // 创建Retrofit
         mRetrofit = new Retrofit.Builder()
-                .client(mOkHttpClient)
+        .client(mOkHttpClient)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://api.douban.com/v2/movie/")

@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
 			    vp.setCurrentItem(vp.getCurrentItem()+1);
 			}
 			hanlder.sendEmptyMessageDelayed(msgwhat, 2000);//2s后发送,保持了循环
-			super.handleMessage(msg);
 		}
 	};
 	protected void onCreate(Bundle savedInstanceState) {

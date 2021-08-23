@@ -87,7 +87,7 @@ public class DemoFragment_One extends BaseFragment {
     @Override
     public void fetchData() {
         Log.i(TAG, "DemoFragment_One-fetchData");
-        Observable<DataEntity> observable = RetrofitManager.getInstance(context).create(DataService.class).getTop250(index, 10);
+      Observable<DataEntity> observable = RetrofitManager.getInstance(context).create(DataService.class).getTop250(index, 10);
         observable.observeOn(AndroidSchedulers.mainThread(), true)
                 .map(new Func1<DataEntity, List<DataEntity.ObjectInfo>>() {
 

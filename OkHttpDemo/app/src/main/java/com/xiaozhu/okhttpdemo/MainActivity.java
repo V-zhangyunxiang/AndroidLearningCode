@@ -1,4 +1,4 @@
-package com.xiaozhu.okhttpdemo;
+fpackage com.xiaozhu.okhttpdemo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -76,7 +76,19 @@ public class MainActivity extends AppCompatActivity {
         final Request request = new Request.Builder()
                 .url("http://www.baidu.com/")
                 //设置是否使用缓存
-                .cacheControl(CacheControl.FORCE_NETWORK)
+                .cacheControl(CacheControl.FORCE_NETWORK) / NO_CACHE
+                ------
+                原理：
+                CacheControl cacheControl = new CacheControl.Builder()
+                noCache();//不使用缓存，用网络请求
+                noStore();//不使用缓存，也不存储缓存
+                onlyIfCached();//只使用缓存
+                noTransform();//禁止转码
+                maxAge(10, TimeUnit.MILLISECONDS);//设置超时时间为10ms。
+                maxStale(10, TimeUnit.SECONDS);//超时之外的超时时间为10s
+                minFresh(10, TimeUnit.SECONDS);//超时时间为当前时间加上10秒钟。
+                .build();
+                --------
                 //调用header(name, value)方法就可以设置请求头的 name 和 value，调用该方法会确保整个请求头中不会存在多个名称一样的 name。
                 //如果想添加多个 name 相同的请求头，应该调用addHeader(name, value)方法，这样可以添加重复 name 的请求头，其 value 可以不同
                 /*.header("User-Agent", "OkHttp Headers.java")

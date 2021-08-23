@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter implements View.OnClickListe
 
     public void setOnChildClickLister(onChildClickListener listener) {
         this.listener = listener;
-    }
+}
 
     private onChildClickListener listener;
 
@@ -86,7 +86,6 @@ public class MyAdapter extends RecyclerView.Adapter implements View.OnClickListe
             view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
             view.setOnClickListener(this);
             viewHolder = new MyViewHolder(view);
-
         }
         return viewHolder;
     }

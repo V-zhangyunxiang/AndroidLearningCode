@@ -18,6 +18,9 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 		holder=this.getHolder();
 		holder.addCallback(this);
 		mThread=new MyThread(holder);
+		setFocusable(true) 能否获得焦点
+        setFocusableInTouchMode(true) 能否通过触摸获得焦点
+        setKeepScreenOn(true);//保持屏幕长亮
 	}
        static class MyThread implements Runnable{
         private SurfaceHolder holder;
